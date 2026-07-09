@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { getExcursionImage } from "@/lib/images";
 
 export function EditorsChoice() {
@@ -36,11 +37,10 @@ export function EditorsChoice() {
           </div>
           <div className="card-signature overflow-hidden p-0">
             <div className="relative aspect-[16/10]">
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="h-full w-full object-cover"
-                loading="lazy"
+              <ResponsiveImage
+                image={image}
+                role="card"
+                imgClassName="h-full w-full object-cover"
               />
             </div>
             <div className="p-6">

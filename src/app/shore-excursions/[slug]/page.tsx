@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { notFound } from "next/navigation";
 import { excursionPageMetadata } from "@/lib/seo";
 import { PhotoHeroBand } from "@/components/PhotoHeroBand";
@@ -100,7 +101,13 @@ export default async function ExcursionDetailPage({ params }: { params: Promise<
                 {related.map((r) => r && (
                   <Link key={r.slug} href={`/shore-excursions/${r.slug}`} className="card-editorial group overflow-hidden">
                     <div className="relative aspect-[16/9] overflow-hidden">
-                      <img src={getExcursionImage(r.slug).src} alt={getExcursionImage(r.slug).alt} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                      {(() => { const ri = getExcursionImage(r.slug); return (
+                      <ResponsiveImage
+                        image={ri}
+                        role="card"
+                        imgClassName="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    ); })()}
                     </div>
                     <div className="p-5">
                       <h3 className="font-display text-base font-bold text-gray-900 group-hover:text-coastal-800">{r.title}</h3>

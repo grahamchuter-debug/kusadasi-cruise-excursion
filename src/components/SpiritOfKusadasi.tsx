@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { siteImages } from "@/lib/images";
 
 export function SpiritOfKusadasi() {
@@ -27,11 +28,10 @@ export function SpiritOfKusadasi() {
             </div>
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-2xl">
-            <img
-              src={siteImages.hero.src}
-              alt="Library of Celsus at ancient Ephesus in golden light"
-              className="h-full w-full object-cover"
-              loading="lazy"
+            <ResponsiveImage
+              image={siteImages.hero}
+              role="card"
+              imgClassName="h-full w-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-coastal-900/40 to-transparent" aria-hidden="true" />
           </div>

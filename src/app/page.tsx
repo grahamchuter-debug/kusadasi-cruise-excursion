@@ -8,6 +8,8 @@ import { breadcrumbSchema, faqSchema, travelGuideSchema } from "@/lib/schema";
 import { coreSections, getHomepageFaqs } from "@/data/homepage";
 import { getFeaturedExcursions } from "@/data/excursions";
 import { siteImages, getExcursionImage } from "@/lib/images";
+import { ResponsiveImage } from "@/components/ResponsiveImage";
+import { PreloadImage } from "@/components/PreloadImage";
 import { SpiritOfKusadasi } from "@/components/SpiritOfKusadasi";
 import { HonestAdvice } from "@/components/HonestAdvice";
 import { EditorsChoice } from "@/components/EditorsChoice";
@@ -54,7 +56,14 @@ export default function HomePage() {
       />
 
       <section className="home-hero">
-        <img src={siteImages.hero.src} alt={siteImages.hero.alt} className="absolute inset-0 h-full w-full object-cover" fetchPriority="high" />
+        <PreloadImage base={siteImages.hero.base} role="hero" />
+        <ResponsiveImage
+          image={siteImages.hero}
+          role="hero"
+          priority
+          className="absolute inset-0 block h-full w-full"
+          imgClassName="absolute inset-0 h-full w-full object-cover"
+        />
         <div className="hero-overlay" aria-hidden="true" />
         <div className="container-wide relative z-10 px-4 sm:px-6 lg:px-8">
           <p className="section-eyebrow mb-2 text-coastal-100">Turkish Aegean cruise planning authority</p>
@@ -126,7 +135,11 @@ export default function HomePage() {
               return (
                 <Link key={e.slug} href={`/shore-excursions/${e.slug}`} className="card-editorial group overflow-hidden">
                   <div className="relative aspect-[16/9] overflow-hidden">
-                    <img src={image.src} alt={image.alt} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                    <ResponsiveImage
+                    image={image}
+                    role="card"
+                    imgClassName="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                     <div className="absolute inset-0 bg-gradient-to-t from-coastal-900/55 via-transparent to-transparent" aria-hidden="true" />
                     {isEditorsChoice ? (
                       <span className="absolute left-3 top-3 badge-editors-choice">⭐ Editor&apos;s Choice</span>

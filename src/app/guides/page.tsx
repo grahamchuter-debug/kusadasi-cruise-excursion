@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { buildMetadata } from "@/lib/seo";
 import { PageHero } from "@/components/PageHero";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -57,7 +58,11 @@ export default function GuidesHubPage() {
               return (
                 <Link key={h.slug} href={`/guides/${h.slug}`} className="card-editorial group overflow-hidden">
                   <div className="relative aspect-[16/9] overflow-hidden">
-                    <img src={img.src} alt={img.alt} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                    <ResponsiveImage
+                    image={img}
+                    role="card"
+                    imgClassName="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                   </div>
                   <div className="p-6">
                     <h3 className="font-display text-lg font-bold text-gray-900 group-hover:text-coastal-800">{h.attractionName}</h3>
@@ -77,7 +82,11 @@ export default function GuidesHubPage() {
               return (
                 <Link key={g.slug} href={`/guides/${g.slug}`} className="card-editorial group overflow-hidden">
                   <div className="relative aspect-[16/9] overflow-hidden">
-                    <img src={img.src} alt={img.alt} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                    <ResponsiveImage
+                    image={img}
+                    role="card"
+                    imgClassName="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                   </div>
                   <div className="p-6">
                     <h3 className="font-display text-lg font-bold text-gray-900 group-hover:text-coastal-800">{g.title}</h3>

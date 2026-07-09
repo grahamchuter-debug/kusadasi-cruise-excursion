@@ -1,55 +1,52 @@
 export interface SiteImage {
   src: string;
   alt: string;
+  base: string;
 }
 
 const B = "/images";
 
+function img(base: string, alt: string): SiteImage {
+  return { base, src: `${B}/${base}.jpg`, alt };
+}
+
 export const siteImages = {
-  hero: {
-    src: `${B}/hero-home.jpg`,
-    alt: "Library of Celsus at ancient Ephesus in warm golden light",
-  },
-  ogDefault: {
-    src: `${B}/og-default.jpg`,
-    alt: "Marble Street of Curetes at ancient Ephesus",
-  },
+  hero: img("hero-home", "Library of Celsus at ancient Ephesus in warm golden light"),
+  ogDefault: img("og-default", "Marble Street of Curetes at ancient Ephesus"),
   logo: {
+    base: "logo-mark",
     src: `${B}/logo-mark.svg`,
     alt: "Kuşadası Cruise Excursions",
   },
-  port: {
-    src: `${B}/cruise-port.jpg`,
-    alt: "Cruise ships at the Port of Kuşadası",
-  },
+  port: img("cruise-port", "Cruise ships at the Port of Kuşadası"),
 } as const;
 
 export const subjectImages: Record<string, SiteImage> = {
-  ephesus: { src: `${B}/ephesus.jpg`, alt: "Library of Celsus at ancient Ephesus" },
-  "ancient-history": { src: `${B}/marble-streets.jpg`, alt: "Marble Street of Curetes at Ephesus" },
-  biblical: { src: `${B}/virgin-mary.jpg`, alt: "House of the Virgin Mary chapel above Selçuk" },
-  village: { src: `${B}/sirince.jpg`, alt: "Şirince village stone houses and wine cellars" },
-  nature: { src: `${B}/mountains.jpg`, alt: "Hills and olive groves above the Selçuk valley near Ephesus" },
-  private: { src: `${B}/private.jpg`, alt: "Walking Curetes Street on a private Ephesus tour" },
-  culture: { src: `${B}/bazaar.jpg`, alt: "Kuşadası shopping bazaar and waterfront" },
-  theatre: { src: `${B}/theatre.jpg`, alt: "Great Theatre at ancient Ephesus" },
-  terrace: { src: `${B}/terrace-houses.jpg`, alt: "Terrace Houses mosaics at Ephesus" },
-  food: { src: `${B}/food.jpg`, alt: "Traditional Turkish meze and Aegean cuisine" },
-  history: { src: `${B}/hadrian.jpg`, alt: "Temple of Hadrian at ancient Ephesus" },
-  family: { src: `${B}/family.jpg`, alt: "Great Theatre at Ephesus — family-friendly ancient site" },
-  luxury: { src: `${B}/luxury.jpg`, alt: "Terrace Houses frescoes at Ephesus" },
-  compare: { src: `${B}/compare.jpg`, alt: "Roman columns and ruins at Ephesus" },
-  port: { src: `${B}/cruise-port.jpg`, alt: "Cruise ships docked at Kuşadası Cruise Port" },
-  highlights: { src: `${B}/highlights.jpg`, alt: "Marble Street at Ephesus from Kuşadası cruise port" },
-  photography: { src: `${B}/photography.jpg`, alt: "Library of Celsus photographed in golden morning light" },
-  coast: { src: `${B}/coast.jpg`, alt: "Kuşadası harbour on the Aegean coast" },
-  beach: { src: `${B}/beach.jpg`, alt: "Ladies Beach (Kadınlar Denizi) near Kuşadası" },
-  bazaar: { src: `${B}/bazaar.jpg`, alt: "Kuşadası town bazaar and shopping streets" },
-  city: { src: `${B}/coast.jpg`, alt: "Kuşadası waterfront and harbour promenade" },
-  mountains: { src: `${B}/mountains.jpg`, alt: "Aegean hills and landscape near Ephesus" },
-  medieval: { src: `${B}/history.jpg`, alt: "Temple of Hadrian — Roman architecture at Ephesus" },
-  "marble-streets": { src: `${B}/marble-streets.jpg`, alt: "Curetes Street marble avenue at Ephesus" },
-  hadrian: { src: `${B}/hadrian.jpg`, alt: "Temple of Hadrian reliefs at Ephesus" },
+  ephesus: { base: "ephesus", src: `${B}/ephesus.jpg`, alt: "Library of Celsus at ancient Ephesus" },
+  "ancient-history": { base: "marble-streets", src: `${B}/marble-streets.jpg`, alt: "Marble Street of Curetes at Ephesus" },
+  biblical: { base: "virgin-mary", src: `${B}/virgin-mary.jpg`, alt: "House of the Virgin Mary chapel above Selçuk" },
+  village: { base: "sirince", src: `${B}/sirince.jpg`, alt: "Şirince village stone houses and wine cellars" },
+  nature: { base: "mountains", src: `${B}/mountains.jpg`, alt: "Hills and olive groves above the Selçuk valley near Ephesus" },
+  private: { base: "private", src: `${B}/private.jpg`, alt: "Walking Curetes Street on a private Ephesus tour" },
+  culture: { base: "bazaar", src: `${B}/bazaar.jpg`, alt: "Kuşadası shopping bazaar and waterfront" },
+  theatre: { base: "theatre", src: `${B}/theatre.jpg`, alt: "Great Theatre at ancient Ephesus" },
+  terrace: { base: "terrace-houses", src: `${B}/terrace-houses.jpg`, alt: "Terrace Houses mosaics at Ephesus" },
+  food: { base: "food", src: `${B}/food.jpg`, alt: "Traditional Turkish meze and Aegean cuisine" },
+  history: { base: "hadrian", src: `${B}/hadrian.jpg`, alt: "Temple of Hadrian at ancient Ephesus" },
+  family: { base: "family", src: `${B}/family.jpg`, alt: "Great Theatre at Ephesus — family-friendly ancient site" },
+  luxury: { base: "luxury", src: `${B}/luxury.jpg`, alt: "Terrace Houses frescoes at Ephesus" },
+  compare: { base: "compare", src: `${B}/compare.jpg`, alt: "Roman columns and ruins at Ephesus" },
+  port: { base: "cruise-port", src: `${B}/cruise-port.jpg`, alt: "Cruise ships docked at Kuşadası Cruise Port" },
+  highlights: { base: "highlights", src: `${B}/highlights.jpg`, alt: "Marble Street at Ephesus from Kuşadası cruise port" },
+  photography: { base: "photography", src: `${B}/photography.jpg`, alt: "Library of Celsus photographed in golden morning light" },
+  coast: { base: "coast", src: `${B}/coast.jpg`, alt: "Kuşadası harbour on the Aegean coast" },
+  beach: { base: "beach", src: `${B}/beach.jpg`, alt: "Ladies Beach (Kadınlar Denizi) near Kuşadası" },
+  bazaar: { base: "bazaar", src: `${B}/bazaar.jpg`, alt: "Kuşadası town bazaar and shopping streets" },
+  city: { base: "coast", src: `${B}/coast.jpg`, alt: "Kuşadası waterfront and harbour promenade" },
+  mountains: { base: "mountains", src: `${B}/mountains.jpg`, alt: "Aegean hills and landscape near Ephesus" },
+  medieval: { base: "history", src: `${B}/history.jpg`, alt: "Temple of Hadrian — Roman architecture at Ephesus" },
+  "marble-streets": { base: "marble-streets", src: `${B}/marble-streets.jpg`, alt: "Curetes Street marble avenue at Ephesus" },
+  hadrian: { base: "hadrian", src: `${B}/hadrian.jpg`, alt: "Temple of Hadrian reliefs at Ephesus" },
 };
 
 function pick(key: string): SiteImage {

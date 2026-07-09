@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { experienceCards } from "@/data/homepage";
 import { subjectImages } from "@/lib/images";
 
@@ -30,11 +31,10 @@ export function ExperienceSelector() {
                 className="card-editorial group flex h-full flex-col overflow-hidden"
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
+                  <ResponsiveImage
+                    image={image}
+                    role="card"
+                    imgClassName="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-coastal-900/60 via-transparent to-transparent" aria-hidden="true" />
                   <span className="absolute left-3 top-3 text-2xl" aria-hidden="true">
