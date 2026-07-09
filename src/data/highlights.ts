@@ -275,7 +275,7 @@ export const highlights: AttractionPage[] = [
     slug: "best-time-visit-ephesus-guide",
     title: "Best Time to Visit Ephesus from Kuşadası",
     seoTitle: "Best Time to Visit Ephesus — Crowds, Heat & Cruise Timing",
-    metaDescription: "When to visit Ephesus from Kuşadası — crowd patterns, summer heat, opening times and how to beat the cruise-ship rush.",
+    metaDescription: "When to visit Ephesus from Kuşadası — crowd patterns, summer heat, opening times and how to beat the cruise-ship rush...",
     attractionName: "Best Time to Visit Ephesus",
     tagline: "Early morning beats the heat and the coach convoys — timing matters at Ephesus.",
     overview: "Ephesus opens around 08:00 (times vary seasonally). The best window for cruise passengers is the first 90 minutes after opening — cooler temperatures and fewer coach groups. By 11:00 the marble streets fill and shade disappears.",

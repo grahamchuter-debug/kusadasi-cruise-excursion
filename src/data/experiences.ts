@@ -29,7 +29,7 @@ export const experiencePages: GuidePage[] = [
     slug: "independent-kusadasi-guide",
     title: "Independent Kuşadası Guide — DIY from the Cruise Port",
     seoTitle: "Independent Kuşadası Guide — Walking, Taxis, Ephesus & Timings",
-    metaDescription: "Explore Kuşadası independently from the cruise port — walking route, port facilities, taxi costs, Ephesus access, tickets, heat, shoes, cafés, shopping, currency, safety and return planning.",
+    metaDescription: "Explore Kuşadası independently from the cruise port — walking route, port facilities, taxi costs, Ephesus access, tickets, heat, shoes, cafés, shopping,…",
     tagline: "Port promenade to bazaar — and when Ephesus needs a coach, not a taxi gamble.",
     overview: "Kuşadası splits into two experiences: the port town (walkable, pleasant, secondary) and Ephesus (essential, 20 km away, needs planning). This guide covers both — walking from the ship, taxi fares, Ephesus tickets, opening times, heat, footwear, food, currency, safety and getting back before all-aboard.",
     body: [

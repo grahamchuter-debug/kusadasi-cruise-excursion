@@ -37,7 +37,7 @@ export const schedulePorts: ShipSchedulePort[] = [
     slug: "kusadasi",
     name: "Kuşadası",
     country: "Turkey",
-    seoTitle: "Kuşadası Cruise Ship Schedule 2026",
+    seoTitle: "Kuşadası Cruise Ship Schedule Overview",
     metaDescription:
       "Kuşadası cruise ship schedule — see which ships call at Kuşadası Cruise Port and plan Ephesus excursions around published arrival and departure times.",
     intro:
