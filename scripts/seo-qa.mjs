@@ -6,9 +6,17 @@ import { readFileSync, readdirSync, statSync, existsSync } from "node:fs";
 import { join } from "node:path";
 
 const ROOT = join(import.meta.dirname, "..");
+
+function getSiteConfig() {
+  const siteTs = readFileSync(join(ROOT, "src/lib/site.ts"), "utf8");
+  const url = siteTs.match(/url:\s*"([^"]+)"/)?.[1]?.replace(/\/$/, "");
+  const domain = siteTs.match(/domain:\s*"([^"]+)"/)?.[1];
+  if (!url || !domain) throw new Error("Could not parse SITE from src/lib/site.ts");
+  return { url, domain };
+}
 const OUT = join(ROOT, "out");
 const SRC = join(ROOT, "src");
-const SITE_URL = "https://kotorshoreexcursion.com";
+const { url: SITE_URL, domain: SITE_DOMAIN } = getSiteConfig();
 const errors = [];
 const warnings = [];
 
@@ -128,7 +136,7 @@ if (existsSync(sitemap)) {
 const redirects = join(ROOT, "public/_redirects");
 if (existsSync(redirects)) {
   const text = readFileSync(redirects, "utf8");
-  if (!text.includes("www.kotorshoreexcursion.com")) errors.push("_redirects missing www → apex rule");
+  if (!text.includes(`www.${SITE_DOMAIN}`)) errors.push("_redirects missing www → apex rule");
   if (!text.includes("301")) warnings.push("_redirects may missing 301 flags");
 } else {
   errors.push("public/_redirects missing");
